@@ -17,14 +17,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           RoundedLoadingButton(
+            color: Colors.black,
             resetDuration: Duration(seconds: 5),
             resetAfterDuration: true,
-            child: Text('GREAT', style: TextStyle(color: Colors.white)),
+            child: Text('CONSULTA SALDO(MUERTO DE HAMBRE)!',
+                style: TextStyle(color: Colors.white)),
             controller: _btnController,
             onPressed: () {
               _BalanceConsult();
