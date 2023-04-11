@@ -18,22 +18,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.red,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           RoundedLoadingButton(
-            color: Colors.black,
+            color: Colors.red,
             resetDuration: Duration(seconds: 5),
             resetAfterDuration: true,
-            child: Text('CONSULTA SALDO(MUERTO DE HAMBRE)!',
-                style: TextStyle(color: Colors.white)),
+            child:
+                Text('CONSULTAR SALDO', style: TextStyle(color: Colors.white)),
             controller: _btnController,
             onPressed: () {
               _BalanceConsult();
             },
-          )
+          ),
+          RoundedLoadingButton(
+            color: Colors.red,
+            resetDuration: Duration(seconds: 5),
+            resetAfterDuration: true,
+            child:
+                Text('CONSULTAR MEGAS', style: TextStyle(color: Colors.white)),
+            controller: _btnController,
+            onPressed: () {
+              _BalanceConsult1();
+            },
+          ),
+          RoundedLoadingButton(
+            color: Colors.red,
+            resetDuration: Duration(seconds: 5),
+            resetAfterDuration: true,
+            child: Text('REALIZAR PRESTAMO',
+                style: TextStyle(color: Colors.white)),
+            controller: _btnController,
+            onPressed: () {
+              _BalanceConsult2();
+            },
+          ),
         ],
       ),
     );
@@ -41,6 +63,21 @@ class _HomePageState extends State<HomePage> {
 }
 
 _BalanceConsult() async {
+  String number = "*611*1*1#";
+  await FlutterPhoneDirectCaller.callNumber(number);
+}
+
+_BalanceConsult1() async {
+  String number = "*611*1*1*1#";
+  await FlutterPhoneDirectCaller.callNumber(number);
+}
+
+_BalanceConsult2() async {
+  String number = "*611*3#";
+  await FlutterPhoneDirectCaller.callNumber(number);
+}
+
+_BalanceConsult3() async {
   String number = "*611*1*1#";
   await FlutterPhoneDirectCaller.callNumber(number);
 }
